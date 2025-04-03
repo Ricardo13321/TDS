@@ -1,5 +1,4 @@
-﻿using System.ComponentModel;
-using static System.Console;
+﻿using static System.Console;
 
 Console.ForegroundColor = ConsoleColor.Green;
 
@@ -38,8 +37,10 @@ static void ProdutoComDesconto()
         try { 
             Price = Convert.ToDouble(ReadLine());
             _loc_ = false;
-        } catch (Exception ex) { 
-            Clear(); 
+        } catch (Exception ex) {
+            WriteLine("Por favor digite um valor inteiro");
+            ReadLine();
+            Clear();
         }
     } 
     Clear();
@@ -63,6 +64,9 @@ static void InverterNumeros()
             Number_A = Convert.ToInt32(ReadLine());
             _loc1_ = false;
         } catch (Exception ex) {
+            WriteLine("Digite dois valores");
+            WriteLine("Por favor digite um valor inteiro");
+            ReadLine();
             Clear();
         }
     }
@@ -76,6 +80,8 @@ static void InverterNumeros()
         }
         catch (Exception ex)
         {
+            WriteLine("Por favor digite um valor inteiro.");
+            ReadLine();
             Clear();
         }
     }
