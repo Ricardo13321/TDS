@@ -266,7 +266,9 @@ using static System.Console;
 
 string nivel;
 
-WriteLine("Escreva o nível de alerta:\n[1] Para nível baixo\n[2] Para nível moderado\n[3] Para nível elevado\n[4] Nível de alerta crítico\n[5]EMERGÊNCIA!");
+WriteLine("Escreva o nível de alerta:\n[1] Para nível baixo\n[2] Para nível moderado\n[3] Para nível elevado\n[4] Nível de alerta crítico\n[5]EMERGÊNCIA!\n[*] Qualquer outra coisa para sair");
+
+nivel = ReadLine();
 
 switch (nivel)
 {
@@ -285,6 +287,157 @@ switch (nivel)
     case "5":
         WriteLine("EMERGÊNCIA!");
         break;
-    default:
+    Clear();
+        break;
+}
+ReadLine();
+
+-----------------------------------------------------------------------------
+Exercício 11:
+
+using static System.Console;
+
+int Number_1, Number_2, Number_3;
+
+WriteLine("Escreva o primeiro valor:");
+Number_1 = Convert.ToInt32(ReadLine());
+Clear();
+
+WriteLine("Escreva o segundo valor:");
+Number_2 = Convert.ToInt32(ReadLine());
+Clear();
+
+WriteLine("Escreva o terceiro valor:");
+Number_3 = Convert.ToInt32(ReadLine());
+Clear();
+
+if(Number_1 > Number_2 && Number_1 > Number_3)
+{
+    WriteLine($"O maior valor entre {Number_1}, {Number_2}, {Number_3} é {Number_1}.");
+} else if (Number_2 > Number_3)
+{
+    WriteLine($"O maior valor entre {Number_1}, {Number_2}, {Number_3} é {Number_2}.");
+} else
+{
+    WriteLine($"O maior valor entre {Number_1}, {Number_2}, {Number_3} é {Number_3}.");
+}
+
+ReadLine();
+
+-----------------------------------------------------------------------------
+Exercício 12:
+
+using static System.Console;
+
+int Number_1, Number_2, Number_3;
+
+WriteLine("Escreva o comprimento do primeiro lado do triângulo:");
+Number_1 = Convert.ToInt32(ReadLine());
+Clear();
+
+WriteLine("Escreva o comprimento do segundo lado do triângulo:");
+Number_2 = Convert.ToInt32(ReadLine());
+Clear();
+
+WriteLine("Escreva o comprimento do terceiro lado do triângulo:");
+Number_3 = Convert.ToInt32(ReadLine());
+Clear();
+
+if(Number_1 > Number_2+Number_3)
+{
+    WriteLine($"Não é possível existir um triângulo onde seus lados tenham {Number_1}, {Number_2}, {Number_3}, pois  a soma dos lados {Number_2} e {Number_3} é menor que o lado {Number_1}");
+} else if(Number_2 > Number_1+Number_3) 
+{
+    WriteLine($"Não é possível existir um triângulo onde seus lados tenham {Number_1}, {Number_2}, {Number_3}, pois  a soma dos lados {Number_1} e {Number_3} é menor que o lado {Number_2}");
+} else if(Number_3 > Number_1+Number_2)
+{
+    WriteLine($"Não é possível existir um triângulo onde seus lados tenham {Number_1}, {Number_2}, {Number_3}, pois  a soma dos lados {Number_2} e {Number_1} é menor que o lado {Number_3}");
+} else
+{
+    WriteLine($"Esse é um trângulo como os lados medindo {Number_1}, {Number_2}, {Number_3}");
+}
+
+ReadLine();
+
+-----------------------------------------------------------------------------
+Exercício 13:
+
+using static System.Console;
+
+double Nota;
+
+WriteLine("Informe a nota do aluno para converter em um conceito!");
+
+Nota = Convert.ToDouble(ReadLine());
+
+switch (Nota)
+{
+	case < 0:
+		WriteLine("A nota do aluno não pode ser menor que 0!");
+		break;
+	case <5:
+		WriteLine("A nota do aluno é D :(");
+		break;
+	case < 7:
+		WriteLine("A nota do aluno é C :|");
+		break;
+	case < 9:
+		WriteLine("A nota do aluno é B :)");
+		break;
+	case <= 10:
+		WriteLine("A nota do aluno é A :D");
+		break;
+	default:
+		WriteLine("A nota do aluno não pode ser maior que 10!");
+        break;
+}
+ReadLine();
+
+-----------------------------------------------------------------------------
+Exercício 14:
+
+using static System.Console;
+
+int Number_1, Number_2;
+
+WriteLine("Informe o primeiro valor");
+Number_1 = Convert.ToInt32(ReadLine());
+
+WriteLine("Informe o segundo valor");
+Number_2 = Convert.ToInt32(ReadLine());
+
+if(Number_1%2 == 0 && Number_2%2 == 0)
+{
+    WriteLine($"A soma dos valores {Number_1} e {Number_2} é {Number_1 + Number_2}");
+} else if(Number_1%2 != 0 && Number_2%2 != 0)
+{
+    WriteLine($"A multiplicação entre os valores {Number_1} e {Number_2} é {Number_1 * Number_2}");
+} else if(Number_1 > Number_2)
+{
+    Write($"A subtração de {Number_1} por {Number_2} é {Number_1 - Number_2}");
+} else
+{
+    Write($"A subtração de {Number_2} por {Number_1} é {Number_2 - Number_1}");
+}
+
+ReadLine();
+
+-----------------------------------------------------------------------------
+Exercício 14:
+
+using static System.Console;
+
+int Number_1, Number_2, Option;
+
+WriteLine("Digite um número para escolher:\n[1] Soma\n[2] Subtração\n[3]Sair");
+Option = Convert.ToInt32(ReadLine());
+Clear();
+
+switch (Option)
+{
+	default:
 		break;
 }
+
+
+ReadLine();
