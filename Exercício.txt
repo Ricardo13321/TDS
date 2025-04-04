@@ -441,3 +441,42 @@ switch (Option)
 
 
 ReadLine();
+
+-----------------------------------------------------------------------------
+Exercício 15:
+
+using static System.Console;
+int Option, Number_1, Number_2;
+
+WriteLine("Escolha uma das opções:\n[1] Soma\n[2] Subtração\n[3] Sair");
+Option = Convert.ToInt32(ReadLine());
+
+switch (Option)
+{
+	case 1:
+		WriteLine("Vamos somar os valores!\nEscreva um valor:");
+		Number_1 = Convert.ToInt32(ReadLine());
+
+		WriteLine("Escreva outro valor");
+		Number_2 = Convert.ToInt32(ReadLine());
+
+		WriteLine($"A soma entre os valores {Number_1} e {Number_2} é {Number_1+Number_2}");
+		break;
+	case 2:
+        WriteLine("Vamos subtrair os valores!\nEscreva um valor:");
+        Number_1 = Convert.ToInt32(ReadLine());
+
+        WriteLine("Escreva outro valor");
+        Number_2 = Convert.ToInt32(ReadLine());
+
+        WriteLine($"A subtração entre os valores {Number_1} e {Number_2} é {Number_1 - Number_2}");
+        break;
+	case 3:
+		WriteLine("Adeus! ;-;");
+		break;
+	default:
+		WriteLine("O valor que você digitou é inválido!");
+		break;
+}
+
+ReadLine();
