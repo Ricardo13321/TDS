@@ -66,11 +66,13 @@ if(Op == "-")
 {
     if(Number_1 == 0 || Number_2 == 0)
     {
-        WriteLine($"{Number_1} / {Number_2} = 0");
+        WriteLine("É impossível realizar uma divisão por zero");
     } else
     {
         WriteLine($"{Number_1} / {Number_2} = {Number_1 / Number_2}");
     }
+} else {
+	WriteLine("Erro!");
 }
 
 -----------------------------------------------------------------------------
