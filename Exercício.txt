@@ -22,18 +22,18 @@ using static System.Console;
 WriteLine("Descobri a classificação da sua idadei");
 int Idade = Convert.ToInt32(ReadLine());
 
-if(Idade <=12)
+if(Idade >= 0 && Idade <=12)
 {
-    WriteLine("Criança");
+    WriteLine($"A idade {Idade} é de um(a) criança");
 } else if (Idade <= 17)
 {
-    WriteLine("Adolescente");
+    WriteLine($"A idade {Idade} é de um(a) adolescente");
 } else if (Idade < 60)
 {
-    WriteLine("Adulto");
+    WriteLine($"A idade {Idade} é de um(a) adulto");
 } else
 {
-    WriteLine("Idoso");
+    WriteLine($"A idade {Idade} é de um(a) idoso");
 }
 
 -----------------------------------------------------------------------------
