@@ -69,7 +69,7 @@ if(Op == "-")
         WriteLine("É impossível realizar uma divisão por zero");
     } else
     {
-        WriteLine($"{Number_1} / {Number_2} = {Number_1 % Number_2}");
+        WriteLine($"{Number_1} / {Number_2} = {Number_1 / Number_2}");
     }
 }
 
