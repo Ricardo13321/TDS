@@ -46,9 +46,9 @@ int Number_1, Number_2;
 String Op;
 
 WriteLine("Digite um valor");
-Number_1 = Convert.ToInt32(ReadLine());
+Number_1 = Convert.ToDouble(ReadLine());
 WriteLine("Digite outro valor");
-Number_2 = Convert.ToInt32(ReadLine());
+Number_2 = Convert.ToDouble(ReadLine());
 WriteLine("Digite a operação que deseja fazer, use: \n[-] para subtrair, \n[+] para somar, \n[/] para dividir e \n[*] para multiplicar");
 Op = ReadLine();
 
