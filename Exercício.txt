@@ -167,16 +167,8 @@ WriteLine("Digite a segunda nota do aluno de 0 a 10");
 Nota_2 = Convert.ToDouble(ReadLine());
 WriteLine("Digite a terceira nota do aluno de 0 a 10");
 Nota_3 = Convert.ToDouble(ReadLine());
-
-Media = (Nota_1 + Nota_2 + Nota_3) / 3;
-WriteLine(Media);
-if (Media >= 7)
-{
-    WriteLine("Aprovado! :)");
-} else
-{
-    WriteLine("Reprovado! :(");
-}
+Media = (Nota_1+Nota_2+Nota_3)/3;
+WriteLine( Media >= 7 ? $"Sua média é {Media:F2}, portanto você está aprovado! :)" : $"Sua média é {Media:F2}, portanto você está reprovado! :)");
 
 -----------------------------------------------------------------------------
 Exercício 7:
