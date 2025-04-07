@@ -42,7 +42,7 @@ Exercício 3:
 using static System.Console;
 
 
-int Number_1, Number_2; 
+double Number_1, Number_2; 
 String Op;
 
 WriteLine("Digite um valor");
