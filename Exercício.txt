@@ -179,15 +179,18 @@ double VT;
 WriteLine("Digite o valor do Produto:");
 VT = Convert.ToDouble(ReadLine());
 
-if(VT < 50)
+if (VT < 50)
 {
     WriteLine($"Esse produto tem o preço abaixo de R$50,00 portanto não tem desconto:\nValor Total: {VT}");
-} else if(VT <= 100)
+}
+else if (VT <= 100)
 {
-    WriteLine($"Esse produto tem um desconto de 5%\nValor Total: {VT.ToString("F")}\nValor com desconto: {(VT*0.05).ToString("F")}");
-} else
+    WriteLine($"Esse produto tem um desconto de 5%\nValor Total: {VT.ToString("F")}\nValor descontado: {(VT * 0.05).ToString("F")}\nValor com desconto: {(VT - (VT * 0.05)).ToString("F")}");
+}
+else
 {
-    WriteLine($"Esse produto tem um desconto de 10%\nValor Total: {VT.ToString("F")}\nValor com desconto: {(VT*0.1).ToString("F")}");
+    WriteLine($"Esse produto tem um desconto de 10%\nValor Total: {VT.ToString("F")}\nValor descontado: {(VT * 0.1).ToString("F")}\nValor com desconto: {(VT-(VT * 0.1)).ToString("F")}");
+}
 
 -----------------------------------------------------------------------------
 Exercício 8:
