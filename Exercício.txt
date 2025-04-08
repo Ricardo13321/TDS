@@ -201,19 +201,15 @@ int Ano;
 WriteLine("Descubra se o ano é bissexto");
 Ano = Convert.ToInt32(ReadLine());
 
-if(Ano%4 == 0)
+if ((Ano % 4 == 0 && Ano % 100 != 0) || Ano % 400 == 0) 
 {
-    if(Ano%400 == 0)
-    {
-        WriteLine($"{Ano} é bissexto!");
-    } else if (Ano%100 != 0)
-    {
-        WriteLine($"{Ano} é bissexto!");
-    } else
-    {
-        WriteLine($"{Ano} não é bissexto!");
-    }
+    WriteLine($"{Ano} é bissexto!");}
+else
+{
+    WriteLine($"{Ano} não é bissexto!");
 }
+
+ReadLine();
 
 -----------------------------------------------------------------------------
 Exercício 9:
