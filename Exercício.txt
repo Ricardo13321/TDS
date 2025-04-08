@@ -216,13 +216,18 @@ Exercício 9:
 
 using static System.Console;
 
-int Number_1, Number_2;
+double Number_1, Number_2;
 String Op;
 
+
+Console.ForegroundColor = ConsoleColor.Red;
+//Console.BackgroundColor = ConsoleColor.DarkBlue;
 WriteLine("Digite um valor");
-Number_1 = Convert.ToInt32(ReadLine());
+Console.ForegroundColor = ConsoleColor.White;
+//Console.BackgroundColor = ConsoleColor.Black;
+Number_1 = Convert.ToDouble(ReadLine());
 WriteLine("Digite outro valor");
-Number_2 = Convert.ToInt32(ReadLine());
+Number_2 = Convert.ToDouble(ReadLine());
 WriteLine("Digite a operação que deseja fazer, use: \n[-] para subtrair, \n[+] para somar, \n[/] para dividir e \n[*] para multiplicar");
 Op = ReadLine();
 
@@ -244,7 +249,7 @@ switch (Op)
         }
         else
         {
-            WriteLine($"{Number_1} / {Number_2} = {Number_1 % Number_2}");
+            WriteLine($"{Number_1} / {Number_2} = {Number_1 / Number_2}");
         }
         break;
     default:
@@ -265,24 +270,31 @@ nivel = ReadLine();
 
 switch (nivel)
 {
-	case "1":
+    case "1":
+        Console.ForegroundColor = ConsoleColor.Green;
         WriteLine("Nível de alerta baixo!");
-		break;
+        break;
     case "2":
+        Console.ForegroundColor = ConsoleColor.Blue;
         WriteLine("Nível de alerta moderado!");
         break;
     case "3":
+        Console.ForegroundColor = ConsoleColor.Yellow;
         WriteLine("Nível de alerta elevado!");
         break;
     case "4":
+        Console.ForegroundColor = ConsoleColor.DarkYellow;
         WriteLine("Nível de alerta crítico!");
         break;
     case "5":
+        Console.ForegroundColor = ConsoleColor.Red;
         WriteLine("EMERGÊNCIA!");
         break;
-    Clear();
+    default:
+        Clear();
         break;
 }
+Console.ForegroundColor = ConsoleColor.White;
 ReadLine();
 
 -----------------------------------------------------------------------------
@@ -360,30 +372,38 @@ using static System.Console;
 double Nota;
 
 WriteLine("Informe a nota do aluno para converter em um conceito!");
-
-Nota = Convert.ToDouble(ReadLine());
-
-switch (Nota)
+try
 {
-	case < 0:
-		WriteLine("A nota do aluno não pode ser menor que 0!");
-		break;
-	case <5:
-		WriteLine("A nota do aluno é D :(");
-		break;
-	case < 7:
-		WriteLine("A nota do aluno é C :|");
-		break;
-	case < 9:
-		WriteLine("A nota do aluno é B :)");
-		break;
-	case <= 10:
-		WriteLine("A nota do aluno é A :D");
-		break;
-	default:
-		WriteLine("A nota do aluno não pode ser maior que 10!");
-        break;
+    Nota = Convert.ToDouble(ReadLine());
+
+    switch (Nota)
+    {
+        case < 0:
+            WriteLine("A nota do aluno não pode ser menor que 0!");
+            break;
+        case < 5:
+            WriteLine("A nota do aluno é D :(");
+            break;
+        case < 7:
+            WriteLine("A nota do aluno é C :|");
+            break;
+        case < 9:
+            WriteLine("A nota do aluno é B :)");
+            break;
+        case <= 10:
+            WriteLine("A nota do aluno é A :D");
+            break;
+        default:
+            WriteLine("A nota do aluno não pode ser maior que 10!");
+            break;
+    }
+} catch (Exception ex)
+{
+    Console.ForegroundColor = ConsoleColor.Red;
+    WriteLine($"ERRO!!!\n{ex}\nO programa encerrou!");
+    Console.ForegroundColor = ConsoleColor.White;
 }
+
 ReadLine();
 
 -----------------------------------------------------------------------------
