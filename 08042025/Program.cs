@@ -8,7 +8,7 @@ for (int i = 0; i < Number_1; i++)
 {
     for (int x = 1; x < Cores.Length; x++)
     {
-        ForegroundColor = Cores[x];
+        //ForegroundColor = Cores[x];
         BackgroundColor = Cores[x];
         //WriteLine(randnum.Next(100000000, 900000000));
         //WriteLine("☻☻☻☻☻☻☻☻☻☻☻☻☻☻☻☻☻☻☻☻☻☻☻☻☻☻☻☻☻☻☻☻☻☻☻☻☻☻☻☻☻☻☻☻☻☻☻☻☻☻☻☻☻☻☻☻☻☻☻☻☻☻☻☻☻☻☻☻☻☻☻☻☻☻☻☻☻☻☻☻☻☻☻☻☻☻");
