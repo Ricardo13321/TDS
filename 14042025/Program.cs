@@ -7,7 +7,6 @@ numberList.Add(13);
 numberList.Add(17);
 numberList.Insert(1, 234);
 numberList.RemoveAt(0);
-numberList.Reverse();
 //numberList.Clear();
 
 foreach (var _loc_ in numberList)
