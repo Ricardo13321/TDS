@@ -1,0 +1,15 @@
+C:\Users\Aluno\source\repos\14042025\bin\Debug\net7.0\14042025.exe
+C:\Users\Aluno\source\repos\14042025\bin\Debug\net7.0\14042025.deps.json
+C:\Users\Aluno\source\repos\14042025\bin\Debug\net7.0\14042025.runtimeconfig.json
+C:\Users\Aluno\source\repos\14042025\bin\Debug\net7.0\14042025.dll
+C:\Users\Aluno\source\repos\14042025\bin\Debug\net7.0\14042025.pdb
+C:\Users\Aluno\source\repos\14042025\obj\Debug\net7.0\14042025.csproj.AssemblyReference.cache
+C:\Users\Aluno\source\repos\14042025\obj\Debug\net7.0\14042025.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Aluno\source\repos\14042025\obj\Debug\net7.0\14042025.AssemblyInfoInputs.cache
+C:\Users\Aluno\source\repos\14042025\obj\Debug\net7.0\14042025.AssemblyInfo.cs
+C:\Users\Aluno\source\repos\14042025\obj\Debug\net7.0\14042025.csproj.CoreCompileInputs.cache
+C:\Users\Aluno\source\repos\14042025\obj\Debug\net7.0\14042025.dll
+C:\Users\Aluno\source\repos\14042025\obj\Debug\net7.0\refint\14042025.dll
+C:\Users\Aluno\source\repos\14042025\obj\Debug\net7.0\14042025.pdb
+C:\Users\Aluno\source\repos\14042025\obj\Debug\net7.0\14042025.genruntimeconfig.cache
+C:\Users\Aluno\source\repos\14042025\obj\Debug\net7.0\ref\14042025.dll
