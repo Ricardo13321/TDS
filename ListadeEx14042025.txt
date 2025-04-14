@@ -109,3 +109,12 @@ ReadLine();
 ______________________________________________________________________________________
 Exercício 5:
 
+using System.Text.Json.Serialization;
+using static System.Console;
+
+List<string> NameList = new List<string> { "Carlos", "Maria", "João", "Ana", "Lucas", "Beatriz", "Felipe", "Camila", "Gustavo", "Laura", "Thiago", "Juliana", "Pedro", "Fernanda", "Eduardo", "Patrícia", "Rafael", "Luciana", "Marcelo", "Sofia" };
+List<int> NotaList = new List<int> { 3, 7, 1, 9, 4, 6, 0, 5, 10, 2, 8, 4, 1, 6, 9, 5, 0, 7, 2, 3};
+int count = 0;
+;
+
+ReadLine();
