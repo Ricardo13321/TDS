@@ -119,9 +119,34 @@ Exercício 5:
 using System.Text.Json.Serialization;
 using static System.Console;
 
-List<string> NameList = new List<string> { "Carlos", "Maria", "João", "Ana", "Lucas", "Beatriz", "Felipe", "Camila", "Gustavo", "Laura", "Thiago", "Juliana", "Pedro", "Fernanda", "Eduardo", "Patrícia", "Rafael", "Luciana", "Marcelo", "Sofia" };
-List<int> NotaList = new List<int> { 3, 7, 1, 9, 4, 6, 0, 5, 10, 2, 8, 4, 1, 6, 9, 5, 0, 7, 2, 3};
-int count = 0;
-;
+List<double> NotaList = new List<double> {};
+int Count = 0;
+bool NotaAcimade50= false;
+WriteLine("____________________________________________");
+WriteLine("------------Notas dos Alunos----------------");
+WriteLine("____________________________________________");
+WriteLine("--------------------------------------------");
+WriteLine("Use valores entre 0 e 10.0");
+WriteLine("--------------------------------------------");
+for (int i = 0; i < 15; i++)
+{
+    Write($"Digite a nota do {i + 1}º Aluno(a):");
+	NotaList.Add(Convert.ToDouble(ReadLine()));
+}
+
+foreach (var item in NotaList)
+{
+	if (item >= 7)
+	{
+		Count++;
+	}
+    NotaAcimade50 = item >= 5 ? true:false;
+}
+WriteLine("____________________________________________");
+WriteLine(NotaAcimade50? $"{Count} alunos estão com a média acima de 7.0!":"Nenhum aluno(a) tirou nota acima de 5.0!");
 
 ReadLine();
+
+______________________________________________________________________________________
+Exercício 6:
+
