@@ -150,3 +150,203 @@ ReadLine();
 ______________________________________________________________________________________
 Exercício 6:
 
+using System.Text.Json.Serialization;
+using static System.Console;
+
+List<double> Timer = new List<double> {};
+double MelhorTempo, Media = 0;
+int VoltaDoMelhorTempo = 0;
+WriteLine("____________________________________________");
+WriteLine("---------------Stop Watch-------------------");
+WriteLine("____________________________________________");
+WriteLine("--------------------------------------------");
+WriteLine("Use valores como 1,20 para representar 01:30s");
+WriteLine("--------------------------------------------");
+for (int i = 0; i < 12; i++)
+{
+    Write($"Digite o tempo da {i + 1}º Volta: ");
+    Timer.Add(Convert.ToDouble(ReadLine()));
+}
+MelhorTempo = Timer[0];
+for (int i = 0; i < 12; i++)
+{
+	if (Timer[i] < MelhorTempo)
+	{
+		MelhorTempo = Timer[i];
+		VoltaDoMelhorTempo = i;
+	}
+	Media += Timer[i]; 
+}
+
+Media = Media / 12;
+WriteLine("____________________________________________");
+WriteLine($"O melhor tempo: {MelhorTempo:F2}");
+WriteLine($"Melhor volta foi: {VoltaDoMelhorTempo}");
+WriteLine($"Media: {Media:F2}");
+
+ReadLine();
+
+______________________________________________________________________________________
+Exercício 7:
+
+using System.Text.Json.Serialization;
+using static System.Console;
+
+List<int> list = new List<int>();
+int MaiorValor = 0, Media = 0;
+
+WriteLine("Quantos alunos você quer salvar?");
+int _loc_ = Convert.ToInt32(Console.ReadLine());
+Clear();
+for (int i = 0; i < _loc_; i++)
+{
+    Write($"Digite o {i+1}º valor: ");
+    list.Add(Convert.ToInt32(ReadLine()));
+    MaiorValor = MaiorValor < list[i] ? list[i] : MaiorValor;
+    Media += list[i];
+    Clear();
+}
+Media = Media / _loc_;
+Clear();
+WriteLine($"Média: {Media}");
+WriteLine($"O valor mais alto: {MaiorValor}");
+
+ReadLine();
+Clear();
+
+______________________________________________________________________________________
+Exercício 8:
+
+using System.Text.Json.Serialization;
+using static System.Console;
+
+List<double> G1 = new List<double>();
+List<double> G2 = new List<double>();
+List<double> Media = new List<double>();
+int _loc_;
+
+Write("Informe a quantidades de alunos: ");
+_loc_ = Convert.ToInt32(Console.ReadLine());
+
+WriteLine("Informe as notas dos alunos de 0 à 10");
+for (int i = 0; i < _loc_; i++)
+{
+    Write($"Digite a nova do {i+1}º Aluno(a): ");
+    G1.Add(Convert.ToDouble(Console.ReadLine()));
+    Write($"Digite a nova do {i + 1}º Aluno(a): ");
+    G2.Add(Convert.ToDouble(Console.ReadLine()));
+    Media.Add((G1[i] + G2[i]) / 2);
+}
+WriteLine("|Aluno | G1 | G2|");
+WriteLine("|---------------|");
+for (int i = 0; i < _loc_; i++)
+{
+    WriteLine($"|   {i+1}  | {G1[i]}  | {G2[i]} |");
+}
+
+ReadLine();
+Clear();
+______________________________________________________________________________________
+Exercício 9:
+
+using System.Text.Json.Serialization;
+using static System.Console;
+
+List<int> list = new List<int>();
+List<int> Par = new List<int>();
+List<int> Impar = new List<int>();
+
+WriteLine("Digite 10 valores");
+WriteLine("---------------------------------------");
+for (int i = 0; i < 10; i++)
+{
+    Write($"Digite o {i}º valor: ");
+    list.Add(Convert.ToInt32(ReadLine()));
+    if (list[i]%2 == 0)
+    {
+        Par.Add(list[i]);
+    } else
+    {
+        Impar.Add(list[i]);
+    }
+}
+list.Sort();
+Par.Sort();
+Impar.Sort();
+
+WriteLine("---------------------------------------");
+
+Write("Todos os valores: ");
+foreach (var  _loc_ in list)
+{
+    Write($"{_loc_} ");
+}
+
+Write("\nPares: ");
+foreach (var _loc_ in Par)
+{
+    Write($"{_loc_} ");
+}
+
+Write("\nÍmpares: ");
+foreach (var _loc_ in Impar)
+{
+    Write($"{_loc_} ");
+}
+ReadLine();
+Clear();
+______________________________________________________________________________________
+Exercício 10:
+
+using System.Text.Json.Serialization;
+using System.Xml.Serialization;
+using static System.Console;
+
+List<int> Gabarito = new List<int>() {3, 1, 5, 2, 4, 1, 3, 5, 2, 4, 1, 5, 3};
+List<int> R1 = new List<int>() {2, 5, 1, 4, 3, 2, 5, 1, 3, 4, 2, 5, 1};
+List<int> R2 = new List<int>() {3, 1, 5, 2, 4, 1, 3, 5, 2, 4, 1, 5, 3};
+List<int> R3 = new List<int>() {5, 3, 2, 4, 1, 5, 2, 3, 1, 4, 5, 2, 3};
+List<string> Nomes = new List<string>() { "Maria", "Bruno", "João Cleber" };
+int acertos = 0;
+
+
+Write($"Nome: {Nomes[0]} \nRespostas: ");
+for (int i = 0; i < 13; i++)
+{
+    Write(R1[i] + " ");
+    acertos = R1[i] == Gabarito[i] ? acertos+1 : acertos;
+}
+WriteLine($"\nAcertos: {acertos}");
+if (acertos == 13)
+{
+    WriteLine("Ganhador!");
+}
+acertos = 0;
+
+Write($"\nNome: {Nomes[1]} \nRespostas: ");
+for (int i = 0; i < 13; i++)
+{
+    Write(R2[i] + " ");
+    acertos = R2[i] == Gabarito[i] ? acertos + 1 : acertos;
+}
+WriteLine($"\nAcertos: {acertos}");
+if (acertos == 13)
+{
+    WriteLine("Ganhador!");
+}
+acertos = 0;
+
+Write($"\nNome: {Nomes[2]} \nRespostas: ");
+for (int i = 0; i < 13; i++)
+{
+    Write(R3[i] + " ");
+    acertos = R3[i] == Gabarito[i] ? acertos + 1 : acertos;
+}
+WriteLine($"\nAcertos: {acertos}");
+if (acertos == 13)
+{
+    WriteLine("Ganhador!");
+}
+
+ReadLine();
+Clear();
