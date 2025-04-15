@@ -303,50 +303,33 @@ using System.Xml.Serialization;
 using static System.Console;
 
 List<int> Gabarito = new List<int>() {3, 1, 5, 2, 4, 1, 3, 5, 2, 4, 1, 5, 3};
-List<int> R1 = new List<int>() {2, 5, 1, 4, 3, 2, 5, 1, 3, 4, 2, 5, 1};
-List<int> R2 = new List<int>() {3, 1, 5, 2, 4, 1, 3, 5, 2, 4, 1, 5, 3};
-List<int> R3 = new List<int>() {5, 3, 2, 4, 1, 5, 2, 3, 1, 4, 5, 2, 3};
-List<string> Nomes = new List<string>() { "Maria", "Bruno", "João Cleber" };
-int acertos = 0;
+List<int> R1 = new List<int>() { 2, 5, 1, 4, 3, 2, 5, 1, 3, 4, 2, 5, 1 };
+List<int> R2 = new List<int>() { 3, 1, 5, 2, 4, 1, 3, 5, 2, 4, 1, 5, 3 };
+List<int> R3 = new List<int>() { 5, 3, 2, 4, 1, 5, 2, 3, 1, 4, 5, 2, 3 };
+List<string> Nomes = new List<string>() {"Maria", "Bruno", "João Cleber"};
+List<List<int>> Listas = new List<List<int>>() {R1, R2, R3};
+int Count = 0;
 
+for (int i = 0; i < 3; i++)
+{
+    WriteLine("----------------------------------------");
+    WriteLine($"Nome: {Nomes[i]}");
+	Write("Respostas: ");
+    for (int x = 0; x < 13; x++)
+    {
+        Write(Listas[i][x]+" ");
+        Count = Listas[i][x] == Gabarito[x]? Count+1 : Count;
+    }
+    WriteLine($"\nAcertos: {Count}");
+    if (Count == 13)
+    {
+        ForegroundColor = ConsoleColor.Green;
+        WriteLine("Ganhou!");
+        ForegroundColor = ConsoleColor.White;
+    }
+    Count = 0;
+}
 
-Write($"Nome: {Nomes[0]} \nRespostas: ");
-for (int i = 0; i < 13; i++)
-{
-    Write(R1[i] + " ");
-    acertos = R1[i] == Gabarito[i] ? acertos+1 : acertos;
-}
-WriteLine($"\nAcertos: {acertos}");
-if (acertos == 13)
-{
-    WriteLine("Ganhador!");
-}
-acertos = 0;
-
-Write($"\nNome: {Nomes[1]} \nRespostas: ");
-for (int i = 0; i < 13; i++)
-{
-    Write(R2[i] + " ");
-    acertos = R2[i] == Gabarito[i] ? acertos + 1 : acertos;
-}
-WriteLine($"\nAcertos: {acertos}");
-if (acertos == 13)
-{
-    WriteLine("Ganhador!");
-}
-acertos = 0;
-
-Write($"\nNome: {Nomes[2]} \nRespostas: ");
-for (int i = 0; i < 13; i++)
-{
-    Write(R3[i] + " ");
-    acertos = R3[i] == Gabarito[i] ? acertos + 1 : acertos;
-}
-WriteLine($"\nAcertos: {acertos}");
-if (acertos == 13)
-{
-    WriteLine("Ganhador!");
-}
 
 ReadLine();
 Clear();
