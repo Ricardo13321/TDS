@@ -1,5 +1,4 @@
 ﻿using static System.Console;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace menu
 {
@@ -23,6 +22,8 @@ namespace menu
             Number_2 = Convert.ToInt32(ReadLine());
             Sum = Number_1 + Number_2;
             WriteLine($"A soma dos valres {Number_1} e {Number_2} é {Sum}");
+            Write("Aperte enter para continuar...");
+            ReadLine();
         }
 
         private static void option2()
@@ -32,11 +33,25 @@ namespace menu
             Number_1 = Convert.ToInt32(ReadLine());
             WriteLine("Digite o primeiro valor");
             Number_2 = Convert.ToInt32(ReadLine());
+            WriteLine($"O maior número entre {Number_1} e {Number_2} é {(Number_1 > Number_2 ? Number_1 : Number_2)}");
+            Write("Aperte enter para continuar...");
+            ReadLine();
         }
 
         private static void option3()
         {
-            WriteLine("Executando a opção 4");
+            double IMC, Peso, Altura;
+            WriteLine("Informe a sua altura");
+            Altura = Convert.ToDouble(ReadLine());
+
+            WriteLine("Informe o seu peso");
+            Peso = Convert.ToDouble(ReadLine());
+
+            IMC = Peso / (Altura * Altura);
+
+            WriteLine($"O seu IMC é {IMC:F1}");
+            Write("Aperte enter para continuar...");
+            ReadLine();
         }
 
         private static void Exit()
@@ -52,7 +67,7 @@ namespace menu
         public static void Main(String[] args)
         {
             WriteLine("<<<<<<< MENU >>>>>>>>");
-            String[] options = { "1 - Opção 1", "2 - Opção 2", "3 - Opção 3", "4 - Exit" };
+            String[] options = { "1 - Soma", "2 - Qual o maior", "3 - IMC", "4 - Exit" };
             int option = 0;
             Title = "Menu :3";
 
