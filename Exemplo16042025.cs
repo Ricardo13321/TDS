@@ -34,3 +34,27 @@ namespace MyNamespace
         }
     }
 }
+
+________________________________________________________________________________________
+
+using static System.Console;
+
+namespace MyNamespace
+{
+    class MainClass
+    {
+        public static int CalculaIdade(int num)
+        {
+            int resultado;
+            resultado = DateTime.Today.Year - num;
+            return resultado;
+        }
+
+        static void Main()
+        {
+            WriteLine("Digite o ano que você nasceu");
+            int Ano = Convert.ToInt32(ReadLine());
+            WriteLine($"A sua idade é {CalculaIdade(Ano)}");
+        }
+    }
+}
