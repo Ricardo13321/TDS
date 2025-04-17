@@ -1,0 +1,5 @@
+C:\nomes\CRUD17042025.exe
+C:\nomes\CRUD17042025.dll
+C:\nomes\CRUD17042025.deps.json
+C:\nomes\CRUD17042025.runtimeconfig.json
+C:\nomes\CRUD17042025.pdb

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using System.Numerics;
+using static System.Console;
 
 namespace menu
 {
@@ -16,7 +17,8 @@ namespace menu
 
 
         public static void Main(string[] args)
-        {
+        { 
+
             Console.WriteLine("<<<<<<<<<<<<<<<< NOMES >>>>>>>>>>>>>>>");
             String[] options = 
                 {
@@ -74,29 +76,106 @@ namespace menu
             }
         }
 
+        static List<string> nomes = new List<string>();
+
         private static void Cadastrar()
         {
-
+            EscreverCabecalho("=              CADASTRAR NOME               ="); 
+            WriteLine("\nDigite um nome: ");
+            String nome = ReadLine();
+            if (VerificarNome(nome))
+            {
+                nomes.Add(nome);
+            }
         }
 
         private static void Editar()
         {
-
+            EscreverCabecalho("=               EDITAR NOME                 =");
+            WriteLine("\nDigite o nome que você deseja editar: ");
+            string nome = ReadLine();
+            int index = nomes.IndexOf(nome);
+            if (index >= 0)
+            {
+                WriteLine($"\n O nome que será editado é {nomes[index]}\n Redigite o nome:");
+                string novonome = ReadLine();
+                if (VerificarNome(novonome))
+                {
+                    nomes[index] = novonome;
+                }
+            }
+            
         }
 
         private static void Excluir()
         {
-
+            EscreverCabecalho("=              EXCLUIR NOME                 =");
+            WriteLine("\nDigite o nome que deseja excluir: ");
+            string nome = ReadLine();
+            int index = nomes.IndexOf(nome);
+            if (index >= 0)
+            {
+                WriteLine($"\nO nome que será excluído é {nomes[index]}\nConfirma (s/n)?");
+                string confirma = ReadLine();
+                if (confirma == "s")
+                {
+                    nomes.RemoveAt(index);
+                }
+            }
         }
 
         private static void Gravar()
         {
-
+            EscreverCabecalho("=            GRAVAR NO ARQUIVO              =");
+            try
+            {
+                StreamWriter dadosnomes;
+                string arq = @"C:\nomes\nomes.txt";
+                dadosnomes = File.CreateText(arq);
+                foreach (var item in nomes)
+                {
+                    dadosnomes.WriteLine($"{item}");
+                }
+                dadosnomes.Close();
+            }
+            catch (Exception e)
+            {
+                WriteLine($"{e.Message}");
+            } 
+            finally
+            {
+                WriteLine("<<<<<<<< DADOS GRAVADOS COM SUCESSO! >>>>>>>>>");
+            }
         }
 
         private static void Carregar()
         {
+            EscreverCabecalho("=            CARREGAR NO ARQUIVO            =");
+            var nome = File.ReadAllLines(@"C:\\nomes\\nomes.txt");
+            for (int i = 0; i < nome.Length; i++)
+            {
+                nomes.Add(nome[i]);
+            }
+        }
 
+        private static void EscreverCabecalho(String Titulo)
+        {
+            Clear();
+            WriteLine($"=============================================\n{Titulo}\n=============================================");
+        }
+
+        private static Boolean VerificarNome(String nome)
+        {
+            Boolean repetido = nomes.Any(x => x.Contains(nome));
+            if (repetido)
+            {
+                WriteLine("Este nome já consta em nossos registros!");
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
 
     }
